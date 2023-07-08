@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="card shadow">
+            <div class="card-body">
+                <h3>Log In</h3>
+                <hr>
+                <form [formGroup]="loginForm">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input
+                            [ngClass]="{'is-invalid':loginForm.controls['email'].invalid && loginForm.controls['email'].touched}"
+                            type="text" class="form-control" id="email" formControlName="email"
+                            placeholder="Enter your email" required>
+                        <div class="invalid-feedback"> Enter your Email</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input
+                            [ngClass]="{'is-invalid':loginForm.controls['password'].invalid && loginForm.controls['password'].touched}"
+                            type="password" class="form-control" id="password" formControlName="password"
+                            placeholder="Enter your password" required>
+                        <div class="invalid-feedback"> Enter your password</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid" (click)="login()">Log
+                        In</button>
+                    <div class="mb-3">
+                        <p>If you don't have login, please <a routerLink="/home">SignUp</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
