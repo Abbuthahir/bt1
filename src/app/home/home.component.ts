@@ -11,6 +11,8 @@ import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms'
 export class HomeComponent implements OnInit {
  loginForm!: FormGroup;
  signupForm!: FormGroup;
+ signupSuccess: boolean = false;
+
 
  constructor(private formBuilder: FormBuilder){
   this.loginForm = new FormGroup({
@@ -43,6 +45,6 @@ this.signupForm = new FormGroup({
   signupDetails.push(formValues);
   localStorage.setItem('signupDetails', JSON.stringify(signupDetails));
   console.log(formValues);
-  
+  this.signupSuccess = true;
 }
 }

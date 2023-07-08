@@ -54,6 +54,9 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <a class="mx-4"routerLink="">Log In</a>
+                        <div *ngIf="signupSuccess" class="alert alert-success mt-3">
+                            You have signed up successfully!
+                          </div>
                     </form>
                 </div>
             </div>
