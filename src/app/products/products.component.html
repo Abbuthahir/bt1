@@ -1,0 +1,22 @@
+<!-- <p>products works!</p> -->
+<div class="container">
+    <div class="row" *ngIf="products.length">
+        <div class="col col-md-4 d-flex justify-content-center align-items-center" *ngFor="let product of products">
+            <!-- {{log(product)}} -->
+            <div class="property">
+                <div class="card shadow mx-5 mt-5" style="width: 18rem;">
+                    <div class="card-body text-center" [ngClass]="{'selected': product.isHovered}"
+                        (mouseover)="product.isHovered = true" (mouseleave)="product.isHovered = false">
+                        <h3 style="text-align:center; font-family:Arial, Helvetica, sans-serif; font-style: italic;"><b>
+                                {{product.name}}</b></h3>
+                        <img [src]="product.image" class="card-img-top" alt="..." height="400px" width="200px"
+                            style="object-fit: contain;">
+                        <p class="text-center" *ngIf="product.isHovered"><em>{{product.price | currency: 'INR'}}</em>
+                        </p>
+                        <p class="text-center" *ngIf="product.isHovered">{{product.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
