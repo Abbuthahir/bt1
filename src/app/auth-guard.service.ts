@@ -1,15 +1,18 @@
 import { inject, Injectable } from '@angular/core';
-import { CanActivateFn } from '@angular/router';
+import { CanActivateFn, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuardService {
-  loginResult = 'success';
-  constructor(){}
+  loginResult = '';
+  constructor( public router: Router) { }
   loginUser() {
-   return true;
+    return true;
+  }
+ reload() {
+    return this.router.navigate(['']);
   }
 }
 export const canActivateTeam = () => {
@@ -17,5 +20,7 @@ export const canActivateTeam = () => {
   if (auth.loginResult === 'success') {
     return auth.loginUser();
   }
-  return false;
+  else {
+    return auth.reload();
+  }
 }
