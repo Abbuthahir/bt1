@@ -10,6 +10,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate:[canActivateTeam]
   },
   {
     path: 'products',
@@ -22,7 +23,8 @@ const routes: Routes = [
   },
   {
     path: 'search',
-    component: SearchComponent
+    component: SearchComponent,
+    canActivate:[canActivateTeam]
   }
 ];
 
