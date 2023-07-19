@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class ProductsComponent {
 selectedProduct: any;
-searchQuery: string = '';
 filteredProducts: any[] = [];
 
   products = [
@@ -45,13 +44,13 @@ filteredProducts: any[] = [];
     // this.selectedProduct = product;
     console.log(product); 
   }
-  filterProducts() {
-    this.filteredProducts = [];
-    this.products.forEach((product) => {
-      if (product.name.toLowerCase().includes(this.searchQuery.toLowerCase())) {
-        this.filteredProducts.push(product);
-      }
-    });
-  }
-  
+  // filterProducts() {
+  //   this.filteredProducts = [];
+  //   this.products.forEach((product) => {
+  //     if (product.name.toLowerCase().includes(this.searchQuery.toLowerCase())) {
+  //       this.filteredProducts.push(product);
+  //     }
+  //   });
+  // }
+
 }
